@@ -50,7 +50,7 @@ make
 sudo make install
 
 # 下载 & 编译项目
-git clone https://github.com/emNavi/Fast-LIO2.git
+git clone https://github.com/jiale67/Fast-lio2.git
 
 cd Fast-LIO2
 catkin_make
