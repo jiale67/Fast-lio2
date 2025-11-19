@@ -15,8 +15,8 @@
 # Ceres 2.1.0
 sudo apt-get -y install liblapack-dev libsuitesparse-dev libcxsparse3 libgflags-dev libgoogle-glog-dev libgtest-dev
 wget -O ceres-solver.zip https://github.com/ceres-solver/ceres-solver/archive/refs/tags/2.1.0.zip
-unzip -q ceres-solver.zip -d "${TRDPARTY_DIR}"
-pushd "${TRDPARTY_DIR}/ceres-solver-2.1.0"
+unzip -q ceres-solver.zip -d thirty_party
+pushd thirty_party/ceres-solver-2.1.0
 mkdir build
 cd build
 cmake -DBUILD_SHARED_LIBS=TRUE ..
@@ -25,8 +25,8 @@ sudo make install
 
 # Eigen 3.3.7
 wget -O eigen3.zip <https://gitlab.com/libeigen/eigen/-/archive/3.3.7/eigen-3.3.7.zip>
-unzip -q eigen3.zip -d "${TRDPARTY_DIR}"
-pushd "${TRDPARTY_DIR}/eigen-3.3.7"
+unzip -q eigen3.zip -d thirty_party
+pushd thirty_party/eigen-3.3.7"
 mkdir build
 cd build
 cmake -DBUILD_SHARED_LIBS=TRUE ..
