@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>livox_ros_driver2</name>
+  <version>1.0.0</version>
+  <description>The ROS device driver for Livox 3D LiDARs</description>
+  
+  <maintainer email="dev@livoxtech.com">Livox Dev Team</maintainer>
+  
+  <license>MIT</license>
+  
+  <author email="dev@livoxtech.com">Livox Dev Team</author>
+  
+  <!-- Build tool dependencies -->
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <!-- Build dependencies -->
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>message_generation</build_depend>
+  <build_depend>rosbag</build_depend>
+  <build_depend>pcl_ros</build_depend>
+  
+  <!-- Build export dependencies -->
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>rospy</build_export_depend>
+  <build_export_depend>std_msgs</build_export_depend>
+  <build_export_depend>rosbag</build_export_depend>
+  <build_export_depend>pcl_ros</build_export_depend>
+  
+  <!-- Runtime dependencies -->
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>message_runtime</exec_depend>
+  <exec_depend>rosbag</exec_depend>
+  <exec_depend>pcl_ros</exec_depend>
+  
+  <!-- Other dependencies -->
+  <depend>sensor_msgs</depend>
+  <depend>git</depend>
+  <depend>apr</depend>
+  
+  <export>
+  </export>
+</package>
+
+
