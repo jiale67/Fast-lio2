@@ -15,26 +15,17 @@
 # Ceres 2.1.0
 sudo apt-get -y install liblapack-dev libsuitesparse-dev libcxsparse3 libgflags-dev libgoogle-glog-dev libgtest-dev
 wget -O ceres-solver.zip https://github.com/ceres-solver/ceres-solver/archive/refs/tags/2.1.0.zip
-unzip -q ceres-solver.zip -d "${TRDPARTY_DIR}"
-pushd "${TRDPARTY_DIR}/ceres-solver-2.1.0"
+unzip -q ceres-solver.zip -d thirty_party
+pushd thirty_party/ceres-solver-2.1.0
 mkdir build
 cd build
 cmake -DBUILD_SHARED_LIBS=TRUE ..
 make -j8
 sudo make install
 
-# Eigen 3.3.7
-wget -O eigen3.zip <https://gitlab.com/libeigen/eigen/-/archive/3.3.7/eigen-3.3.7.zip>
-unzip -q eigen3.zip -d "${TRDPARTY_DIR}"
-pushd "${TRDPARTY_DIR}/eigen-3.3.7"
-mkdir build
-cd build
-cmake -DBUILD_SHARED_LIBS=TRUE ..
-sudo make install
-sudo ln -s /usr/include/eigen3/Eigen /usr/include/Eigen
 
 # GTSAM
-cd ~
+cd thirty_party/
 git clone https://github.com/borglab/gtsam.git
 mkdir build && cd build
 cmake -D GTSAM_USE_SYSTEM_EIGEN=ON ..
@@ -42,6 +33,7 @@ make
 sudo make install
 
 # Livox SDK2
+cd thirty_party/
 git clone https://github.com/Livox-SDK/Livox-SDK2.git
 cd Livox-SDK2
 mkdir build
@@ -49,10 +41,19 @@ cd build && cmake ..
 make
 sudo make install
 
-# 下载 & 编译项目
-git clone https://github.com/emNavi/Fast-LIO2.git
+# Eigen 3.3.7(Ubuntu 20.04 已经安装)
+wget -O eigen3.zip <https://gitlab.com/libeigen/eigen/-/archive/3.3.7/eigen-3.3.7.zip>
+unzip -q eigen3.zip -d thirty_party
+pushd thirty_party/eigen-3.3.7"
+mkdir build
+cd build
+cmake -DBUILD_SHARED_LIBS=TRUE ..
+sudo make install
+sudo ln -s /usr/include/eigen3/Eigen /usr/include/Eigen
 
-cd Fast-LIO2
+# 下载 & 编译项目
+cd catkin_ws/src
+git clone https://github.com/jiale67/Fast-lio2.git
 catkin_make
 ```
 
