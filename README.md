@@ -23,7 +23,25 @@ cmake -DBUILD_SHARED_LIBS=TRUE ..
 make -j8
 sudo make install
 
-# Eigen 3.3.7
+
+# GTSAM
+cd thirty_party/
+git clone https://github.com/borglab/gtsam.git
+mkdir build && cd build
+cmake -D GTSAM_USE_SYSTEM_EIGEN=ON ..
+make
+sudo make install
+
+# Livox SDK2
+cd thirty_party/
+git clone https://github.com/Livox-SDK/Livox-SDK2.git
+cd Livox-SDK2
+mkdir build
+cd build && cmake ..
+make
+sudo make install
+
+# Eigen 3.3.7(Ubuntu 20.04 已经安装)
 wget -O eigen3.zip <https://gitlab.com/libeigen/eigen/-/archive/3.3.7/eigen-3.3.7.zip>
 unzip -q eigen3.zip -d thirty_party
 pushd thirty_party/eigen-3.3.7"
@@ -33,26 +51,9 @@ cmake -DBUILD_SHARED_LIBS=TRUE ..
 sudo make install
 sudo ln -s /usr/include/eigen3/Eigen /usr/include/Eigen
 
-# GTSAM
-cd ~
-git clone https://github.com/borglab/gtsam.git
-mkdir build && cd build
-cmake -D GTSAM_USE_SYSTEM_EIGEN=ON ..
-make
-sudo make install
-
-# Livox SDK2
-git clone https://github.com/Livox-SDK/Livox-SDK2.git
-cd Livox-SDK2
-mkdir build
-cd build && cmake ..
-make
-sudo make install
-
 # 下载 & 编译项目
+cd catkin_ws/src
 git clone https://github.com/jiale67/Fast-lio2.git
-
-cd Fast-LIO2
 catkin_make
 ```
 
