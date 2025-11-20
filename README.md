@@ -1,7 +1,7 @@
 # Fast-LIO2 + SC-A-LOAM 
 > Note: This project is based on [FAST_LIO_SLAM](https://github.com/GDUT-Kyle/FAST_LIO_SLAM.git)、[livox2pointcloud](https://github.com/juliangaal/livox2pointcloud.git) .
 
-### 使用Fast-LIO2 的激光惯性里程计，加入 SC-A-LOAM 实现回环闭合和位姿图优化，最后使用 ego-planner 作为规划器
+### 使用Fast-LIO2 的激光惯性里程计，加入 SC-A-LOAM 实现回环闭合和位姿图优化
 ![result](./result.png)
 
 ## 实验配置
@@ -61,5 +61,6 @@ catkin_make
 Mid360激光雷达上电，插入Mid360激光雷达网口至电脑，[配置好 livox_ros_driver2 驱动包中的 IP 地址](https://github.com/Livox-SDK/livox_ros_driver2?tab=readme-ov-file#4-lidar-config)，确保雷达可使用
 ```bash 
 # 开启 Fast_LIO2 算法
-bash ./run_fast_lio.sh 
+source ./devel/setup.bash 
+roslaunch livox2pointcloud run_fast_lio.launch
 
