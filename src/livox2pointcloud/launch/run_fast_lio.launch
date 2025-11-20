@@ -1,0 +1,16 @@
+<launch>
+  
+  <include file="$(find livox_ros_driver2)/launch/msg_MID360.launch"/>  
+  <include file="$(find fast_lio)/launch/mapping_mid360.launch"/>  
+  <include file="$(find livox2pointcloud)/launch/livox2pointcloud.launch"/>  
+
+
+  
+
+  <!-- ==================== RViz可视化 ==================== -->
+  <node name="rviz_fuel_ground" pkg="rviz" type="rviz" 
+        args="-d $(find livox2pointcloud)/rviz/rviz_show.rviz" 
+        output="screen" required="false"/>
+
+
+</launch>
